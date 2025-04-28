@@ -1,59 +1,27 @@
-# TrustSeal - Digital Signature Verifier Tool
+# TrustSeal -  RSA Encryption, Decryption, and Digital Signature Tool
 
 ## Overview
-TrustSeal is a Python-based cryptographic tool that allows users to **digitally sign messages** using a private key and **verify signatures** with a public key. This ensures message authenticity and integrity.
+This project implements a simple RSA-based cryptographic tool with the following features:
+- Prime number generation using the Miller-Rabin primality test
+- RSA key pair generation (public and private keys)
+- Message encryption and decryption
+- Digital signature signing and verification
+- A GUI built with Tkinter to facilitate user interaction
 
 ## Features
-- Generate RSA key pairs (public & private keys)
-- Digitally sign messages using the private key
-- Verify message signatures using the public key
-- User-friendly command-line interface with ASCII art header
+- **Key Generation**: Generates primes (p and q) of 3 digits or more, computes modulus (n), public key (e), and private key (d).
+- **Encryption/Decryption**: Encrypt messages using the public key and decrypt with the private key.
+- **Digital Signatures**: Sign a message using the private key and verify it with the public key.
+- **Validation**: Ensures user inputs meet RSA mathematical conditions (prime numbers, modulus consistency, and modular inverses).
 
-## Installation
-### Prerequisites
-Ensure you have Python installed. You can download it from [python.org](https://www.python.org/).
+## Requirements
+- Python 3.x
+- Tkinter (standard with Python installation)
 
-### Install Dependencies
-Use the following command to install the required libraries:
-
-```bash
-pip install cryptography pyfiglet
-```
-
-## Usage
-Run the script using:
-
-```bash
-python digital_signature_verifier.py
-```
-
-### Options:
-1. **Generate Key Pair**
-   - Creates a private key and corresponding public key.
-   - Saves them as `private_key.pem` and `public_key.pem`.
-
-2. **Sign a Message**
-   - Prompts the user to enter a message.
-   - Generates a digital signature using the private key.
-
-3. **Verify a Signature**
-   - Verifies a given signature with the corresponding public key.
-
-## Example Usage
-**Step 1:** Generate a key pair
-```bash
-python digital_signature_verifier.py --generate
-```
-
-**Step 2:** Sign a message
-```bash
-python digital_signature_verifier.py --sign "Hello, TrustSeal!"
-```
-
-**Step 3:** Verify a signature
-```bash
-python digital_signature_verifier.py --verify "Hello, TrustSeal!" signature.txt public_key.pem
-```
-
----
-### 🚀 Secure Your Messages with TrustSeal! 🚀
+## How to Run
+1. Ensure you have Python 3.x installed.
+2. Run the script `TrustSeal.py` using the command:
+    ```bash
+    python TrustSeal.py
+    ```
+3. Use the GUI to generate keys, encrypt/decrypt messages, and sign/verify digital signatures.
